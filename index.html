@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mapa interactivo con OpenStreetMap y datos meteorologicos de OpenWeatherMap.">
+  <title>Graficas Meteorologicas Interactivas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape--1" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape--2" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <header class="hero">
+      <h1>Graficas meteorologicas interactivas</h1>
+      <p>
+        Selecciona un punto del planeta, consulta su latitud/longitud y carga el tiempo actual
+        junto con la prediccion de 5 dias cada 3 horas.
+      </p>
+    </header>
+
+    <section class="control-panel" aria-label="Controles principales">
+      <div class="control-row">
+        <label for="apiKey">API Key OpenWeatherMap</label>
+        <input id="apiKey" type="password" placeholder="Pega tu API Key aqui" autocomplete="off">
+      </div>
+      <div class="control-actions">
+        <button id="btnLocate" type="button">Usar mi ubicacion</button>
+        <button id="btnLoadWeather" type="button">Cargar clima del punto</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Listo. Selecciona una ubicacion en el mapa.</p>
+      <div class="coords">
+        <div><span class="chip-label">Latitud</span><strong id="latValue">-</strong></div>
+        <div><span class="chip-label">Longitud</span><strong id="lngValue">-</strong></div>
+        <div><span class="chip-label">Ciudad cercana</span><strong id="cityValue">-</strong></div>
+      </div>
+    </section>
+
+    <section class="content-grid" aria-label="Mapa y datos meteorologicos">
+      <article class="card map-card">
+        <h2>Mapa OpenStreetMap</h2>
+        <div id="map" aria-label="Mapa interactivo"></div>
+      </article>
+
+      <article class="card current-card">
+        <h2>Tiempo actual</h2>
+        <div class="current-grid" id="currentWeather">
+          <p>Sin datos todavia.</p>
+        </div>
+      </article>
+
+      <article class="card chart-card">
+        <h2>Prediccion 5 dias (cada 3h) - Temperatura</h2>
+        <canvas id="tempChart" aria-label="Grafica de temperatura" role="img"></canvas>
+      </article>
+
+      <article class="card chart-card">
+        <h2>Prediccion 5 dias - Humedad y viento</h2>
+        <canvas id="humidityWindChart" aria-label="Grafica de humedad y viento" role="img"></canvas>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
