@@ -36,3 +36,11 @@ Sin API Key, las consultas devoleran error.
 - Si aparece `OpenWeatherMap: Invalid API key`, revisa que la clave este bien copiada.
 - Las claves nuevas pueden tardar en activarse (a veces entre 10 minutos y 2 horas).
 - Abre la web con servidor local (`localhost` con Live Server) y no solo con doble clic al archivo.
+
+
+
+
+## URL de acceso web
+- https://graficas-3540d.web.app
+- Alternativa FirebaseApp: https://graficas-3540d.firebaseapp.com
+
