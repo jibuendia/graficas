@@ -42,5 +42,3 @@ Sin API Key, las consultas devoleran error.
 
 ## URL de acceso web
 - https://graficas-3540d.web.app
-- Alternativa FirebaseApp: https://graficas-3540d.firebaseapp.com
-
