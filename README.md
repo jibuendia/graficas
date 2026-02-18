@@ -38,7 +38,7 @@ Sin API Key, las consultas devoleran error.
 - Abre la web con servidor local (`localhost` con Live Server) y no solo con doble clic al archivo.
 
 
-
+c16d099ac52765158d1aa558bf186ffb
 
 ## URL de acceso web
 - https://graficas-3540d.web.app
