@@ -77,17 +77,17 @@ function buildCurrentMetrics(current) {
 
   refs.currentWeather.innerHTML = `
     <article class="metric">
-      <small>Descripcion</small>
+      <small><span class="metric-icon" aria-hidden="true">&#9729;</span>Descripcion</small>
       <strong>${weatherText}</strong>
       <div>${icon}</div>
     </article>
-    <article class="metric"><small>Temperatura</small><strong>${fmt(current.main.temp, 1)} C</strong></article>
-    <article class="metric"><small>Min / Max</small><strong>${fmt(current.main.temp_min, 1)} C / ${fmt(current.main.temp_max, 1)} C</strong></article>
-    <article class="metric"><small>Sensacion termica</small><strong>${fmt(current.main.feels_like, 1)} C</strong></article>
-    <article class="metric"><small>Humedad</small><strong>${current.main.humidity}%</strong></article>
-    <article class="metric"><small>Presion</small><strong>${current.main.pressure} hPa</strong></article>
-    <article class="metric"><small>Viento</small><strong>${fmt(current.wind.speed, 1)} m/s (${current.wind.deg} deg)</strong></article>
-    <article class="metric"><small>Precipitacion (1h)</small><strong>${rain} mm</strong></article>
+    <article class="metric"><small><span class="metric-icon" aria-hidden="true">&#127777;</span>Temperatura</small><strong>${fmt(current.main.temp, 1)} C</strong></article>
+    <article class="metric"><small><span class="metric-icon" aria-hidden="true">&#8597;</span>Min / Max</small><strong>${fmt(current.main.temp_min, 1)} C / ${fmt(current.main.temp_max, 1)} C</strong></article>
+    <article class="metric"><small><span class="metric-icon" aria-hidden="true">&#127787;</span>Sensacion termica</small><strong>${fmt(current.main.feels_like, 1)} C</strong></article>
+    <article class="metric"><small><span class="metric-icon" aria-hidden="true">&#128167;</span>Humedad</small><strong>${current.main.humidity}%</strong></article>
+    <article class="metric"><small><span class="metric-icon" aria-hidden="true">&#9201;</span>Presion</small><strong>${current.main.pressure} hPa</strong></article>
+    <article class="metric"><small><span class="metric-icon" aria-hidden="true">&#127788;</span>Viento</small><strong>${fmt(current.wind.speed, 1)} m/s (${current.wind.deg} deg)</strong></article>
+    <article class="metric"><small><span class="metric-icon" aria-hidden="true">&#127783;</span>Precipitacion (1h)</small><strong>${rain} mm</strong></article>
   `;
 }
 
@@ -133,6 +133,7 @@ function upsertCharts(forecast) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      resizeDelay: 120,
       plugins: {
         legend: { display: true }
       },
@@ -169,6 +170,7 @@ function upsertCharts(forecast) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      resizeDelay: 120,
       scales: {
         y: {
           beginAtZero: true,
